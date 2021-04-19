@@ -41,7 +41,7 @@ public class MenuFuncionario {
 				Acervo.renderizar();
 				break;
 			case 0:
-				System.out.println("\nRetornando ao menu principal");
+				System.out.println("\nRetornando ao menu principal");				
 				break;
 			default:
 				System.out.println("\n -- OPÇÃO INVÁLIDA ! -- \n");

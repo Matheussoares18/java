@@ -13,7 +13,7 @@ public class Principal {
 			System.out.println("\n ----------- MENU PRINCIPAL -----------\n ");
 			System.out.println("1 - Menu Cliente");
 			System.out.println("2 - Menu Funcionário");
-			System.out.println("8 - Listar empréstimos");
+			//System.out.println("3 - Listar empréstimos");
 			System.out.println("0 - Sair");
 			opcao = Console.readInt("\nDigite a opção escolhida: ");
 			
@@ -24,9 +24,9 @@ public class Principal {
 			case 2:
 				MenuFuncionario.renderizar();
 				break;
-			case 9:
-				MenuCliente.renderizar();
-				break;
+			//case 3:
+				//MenuCliente.renderizar();
+				//break;
 			case 0:
 				System.out.println("\nSaindo...");
 				break;
