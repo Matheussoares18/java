@@ -1,9 +1,10 @@
 package views;
 
-import dao.FuncionarioDAO;
+import controllers.FuncionarioController;
+//import dao.FuncionarioDAO;
 import models.Funcionario;
 import utils.Console;
-import utils.Validacao;
+//import utils.Validacao;
 
 public class CadastrarFuncionario {
 
@@ -20,16 +21,14 @@ public class CadastrarFuncionario {
 		f.setSexo(Console.readString("Sexo: "));
 		f.setIdade(Console.readInt("Idade: "));
 		f.setCpf(Console.readString("CPF: "));
-
-		// Verificar CPF aqui
 		
-		if (Validacao.validarCpf(f.getCpf())) {
-			if (FuncionarioDAO.cadastrarFuncionario(f)) {
-				System.out.println("\nFUNCIONÁRIO CADASTRADO!!!\n");
-			} else {
-				System.out.println("\nESSE FUNCIONÁRIO JÁ EXISTE!!!\n");
-			}
-		}else {
+		FuncionarioController.cadastrar(f);
+		
+		if(FuncionarioController.cadastrar(f) == 1) {
+			System.out.println("\nFUNCIONÁRIO CADASTRADO!!!\n");
+		} else if(FuncionarioController.cadastrar(f) == 2) {
+			System.out.println("\nESSE FUNCIONÁRIO JÁ EXISTE!!!\n");
+		} else if(FuncionarioController.cadastrar(f) == 3) {
 			System.out.println("\nCPF inválido!");
 		}
 

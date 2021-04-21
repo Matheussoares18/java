@@ -1,7 +1,7 @@
 package views;
 import controllers.ClienteController;
-import dao.ClienteDAO;
-import models.Cliente;
+//import dao.ClienteDAO;
+//import models.Cliente;
 
 public class ListarClientes {	
 	

@@ -7,16 +7,22 @@ import utils.Validacao;
 public class FuncionarioController {
 
 	// Cadastrar e listar Funcionário
+	// Verificar CPF aqui
 	
-	public static void cadastrar(Funcionario f) {
+	public static int cadastrar(Funcionario f) {
 		if (Validacao.validarCpf(f.getCpf())) {
 			if (FuncionarioDAO.cadastrarFuncionario(f)) {
-				System.out.println("\nFUNCIONÁRIO CADASTRADO!!!\n");
+				return 1;
 			} else {
-				System.out.println("\nESSE FUNCIONÁRIO JÁ EXISTE!!!\n");
+				return 2;
 			}
-		}else {
-			System.out.println("\nCPF inválido!");
+		}
+		return 3;
+	}
+	
+	public static void listar() {
+		for(Funcionario funcionarioCadastrado : FuncionarioDAO.retornarFuncionarios()) {
+			System.out.println(funcionarioCadastrado);
 		}
 	}
 	

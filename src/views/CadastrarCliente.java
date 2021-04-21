@@ -1,9 +1,9 @@
 package views;
 import controllers.ClienteController;
-import dao.ClienteDAO;
+//import dao.ClienteDAO;
 import models.Cliente;
 import utils.Console;
-import utils.Validacao;
+//import utils.Validacao;
 
 public class CadastrarCliente {
 
