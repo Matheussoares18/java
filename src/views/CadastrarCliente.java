@@ -1,4 +1,5 @@
 package views;
+import controllers.ClienteController;
 import dao.ClienteDAO;
 import models.Cliente;
 import utils.Console;
@@ -25,15 +26,27 @@ public class CadastrarCliente {
 
 		// Cadastrar o objeto de cliente na lista de clientes
 		// Verificar CPF aqui
-		if (Validacao.validarCpf(c.getCpf())) {
-			if (ClienteDAO.cadastrarCliente(c)) {
-				System.out.println("\nCLIENTE CADASTRADO!!!\n");
-			} else {
-				System.out.println("\nESSE CLIENTE JÁ EXISTE!!!\n");
-			}
-		}else {
-			System.out.println("\nCPF inválido!");
+		
+//		if (Validacao.validarCpf(c.getCpf())) {
+//			if (ClienteDAO.cadastrarCliente(c)) {
+//				System.out.println("\nCLIENTE CADASTRADO!!!\n");
+//			} else {
+//				System.out.println("\nESSE CLIENTE JÁ EXISTE!!!\n");
+//			}
+//		}else {
+//			System.out.println("\nCPF inválido!");
+//		}
+		
+		//ClienteController.cadastrar(c);
+		if(ClienteController.cadastrar(c) == 1) {
+			System.out.println("\nCLIENTE CADASTRADO!!!\n");
+		} else if(ClienteController.cadastrar(c) == 2) {
+			System.out.println("\nESSE CLIENTE JÁ EXISTE!!!\n");
+		} else if(ClienteController.cadastrar(c) == 3) {
+			System.out.println("\nCPF INVÁLIDO!");
 		}
+		
+		
 
 	}
 

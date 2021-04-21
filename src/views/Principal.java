@@ -10,11 +10,12 @@ public class Principal {
 		
 		int opcao;
 		do {
-			System.out.println("\n ----------- MENU PRINCIPAL -----------\n ");
-			System.out.println("1 - Menu Cliente");
-			System.out.println("2 - Menu Funcionário");
-			//System.out.println("3 - Listar empréstimos");
-			System.out.println("0 - Sair");
+			System.out.println("----------------------------------");
+			System.out.println("----------------------------------");
+			System.out.println("----------MENU PRINCIPAL----------");
+			System.out.println("1 - Menu Cliente\n"
+							 + "2 - Menu Funcionário\n"
+							 + "0 - Sair");
 			opcao = Console.readInt("\nDigite a opção escolhida: ");
 			
 			switch (opcao) {
@@ -24,9 +25,6 @@ public class Principal {
 			case 2:
 				MenuFuncionario.renderizar();
 				break;
-			//case 3:
-				//MenuCliente.renderizar();
-				//break;
 			case 0:
 				System.out.println("\nSaindo...");
 				break;
