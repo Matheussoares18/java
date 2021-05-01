@@ -1,8 +1,10 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import models.Cliente;
+import models.Emprestimo;
 
 public class ClienteDAO {
 
@@ -30,6 +32,17 @@ public class ClienteDAO {
 
 	public static ArrayList<Cliente> retonarClientes() {
 		return clientes;
+	}
+
+	public static Boolean verificarPendencias(int codCliente){
+		Date today = new Date();
+		for (Emprestimo emprestimo : EmprestimoDAO.listarEmprestimos()) {
+			if(emprestimo.getCliente().getCodigo() == codCliente && emprestimo.getDateDevolucao().compareTo(today) < 0){
+				return true;
+
+			}
+		}
+		return false;
 	}
 
 }

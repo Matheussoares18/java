@@ -8,10 +8,10 @@ public class Funcionario extends Pessoa{
 	
 	@Override
 	public String toString() {
-		return  "\nCódigo: " + getCodigo() +
+		return  "\nCï¿½digo: " + getCodigo() +
 				"\nNome: " + getNome() + 
 				"\nSexo: " + getSexo() +
-				"\nIdade: " + getIdade() +
+				"\nIdade: " + getDataDeNasc() +
 				"\nCPF: " + getCpf();
 		}
 

@@ -1,11 +1,13 @@
 package models;
 
+import java.util.Date;
+
 public abstract class Pessoa {
 	
 	private int codigo;
 	private String nome;
 	private String sexo;
-	private int idade;
+	private Date dataDeNasc;
 	private String cpf;
 	
 	public void buscarLivro(){
@@ -24,12 +26,12 @@ public abstract class Pessoa {
 		this.sexo = sexo;
 	}
 
-	public int getIdade() {
-		return idade;
+	public Date getDataDeNasc() {
+		return dataDeNasc;
 	}
 
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setDataDeNasc(Date dataDeNasc) {
+		this.dataDeNasc = dataDeNasc;
 	}
 
 	public int getCodigo() {

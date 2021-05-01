@@ -33,9 +33,9 @@ public class Cliente extends Pessoa{
 		return "\nCodigo: " + getCodigo() + 
 				"\nNome: " + getNome() + 
 				"\nSexo: " + getSexo() +
-				"\nIdade: " + getIdade() +
+				"\nIdade: " + getDataDeNasc() +
 				"\nCPF: " + getCpf() +
-				"\nEndereço: " + getEndereco() +
+				"\nEndereï¿½o: " + getEndereco() +
 				"\nTelefone: " + getTelefone();
 	}
 	

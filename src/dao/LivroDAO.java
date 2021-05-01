@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 import models.Livro;
@@ -18,9 +19,19 @@ public class LivroDAO {
 		}
 		return null;
 	}
+	public static Livro buscarLivroPorCodigo(int codLivro) {
+		for(Livro livroCadastrado : livros) {
+			if(livroCadastrado.getCodlivro() == codLivro) {
+				return livroCadastrado;
+			}
+		}
+		return null;
+	}
 	public static int devolverLivro(int cod) {
 		for (Livro livroCadastrado: livros) {
 			if(livroCadastrado.getCodlivro() == cod){
+				Date today = new Date();
+				
 				livroCadastrado.setEmprestado(false);
 				return 1;
 				

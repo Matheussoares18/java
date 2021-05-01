@@ -1,4 +1,6 @@
 package views;
+import java.util.Date;
+
 import controllers.ClienteController;
 //import dao.ClienteDAO;
 import models.Cliente;
@@ -16,12 +18,15 @@ public class CadastrarCliente {
 		System.out.println("\n -- CADASTRAR CLIENTE --\n ");
 
 		// Preenchendo o objeto de cliente
-		c.setCodigo(Console.readInt("Código: "));
+		c.setCodigo(Console.readInt("Cï¿½digo: "));
 		c.setNome(Console.readString("Nome: "));
 		c.setSexo(Console.readString("Sexo: "));
-		c.setIdade(Console.readInt("Idade: "));
+		System.out.println("Idade: ");
+		String dataDeNasc = Console.readString();
+		Date date = new Date(dataDeNasc);
+		c.setDataDeNasc(date);
 		c.setCpf(Console.readString("CPF: "));
-		c.setEndereco(Console.readString("Endereço: "));
+		c.setEndereco(Console.readString("Endereï¿½o: "));
 		c.setTelefone(Console.readString("Telefone: "));
 
 		// Cadastrar o objeto de cliente na lista de clientes
@@ -31,19 +36,19 @@ public class CadastrarCliente {
 //			if (ClienteDAO.cadastrarCliente(c)) {
 //				System.out.println("\nCLIENTE CADASTRADO!!!\n");
 //			} else {
-//				System.out.println("\nESSE CLIENTE JÁ EXISTE!!!\n");
+//				System.out.println("\nESSE CLIENTE Jï¿½ EXISTE!!!\n");
 //			}
 //		}else {
-//			System.out.println("\nCPF inválido!");
+//			System.out.println("\nCPF invï¿½lido!");
 //		}
 		
 		//ClienteController.cadastrar(c);
 		if(ClienteController.cadastrar(c) == 1) {
 			System.out.println("\nCLIENTE CADASTRADO!!!\n");
 		} else if(ClienteController.cadastrar(c) == 2) {
-			System.out.println("\nESSE CLIENTE JÁ EXISTE!!!\n");
+			System.out.println("\nESSE CLIENTE Jï¿½ EXISTE!!!\n");
 		} else if(ClienteController.cadastrar(c) == 3) {
-			System.out.println("\nCPF INVÁLIDO!");
+			System.out.println("\nCPF INVï¿½LIDO!");
 		}
 		
 		

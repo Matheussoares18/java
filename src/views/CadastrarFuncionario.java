@@ -1,5 +1,7 @@
 package views;
 
+import java.util.Date;
+
 import controllers.FuncionarioController;
 //import dao.FuncionarioDAO;
 import models.Funcionario;
@@ -14,22 +16,25 @@ public class CadastrarFuncionario {
 
 		f = new Funcionario();
 
-		System.out.println("\n -- CADASTRAR FUNCIONÁRIO --\n ");
+		System.out.println("\n -- CADASTRAR FUNCIONï¿½RIO --\n ");
 
-		f.setCodigo(Console.readInt("Código: "));
+		f.setCodigo(Console.readInt("Cï¿½digo: "));
 		f.setNome(Console.readString("Nome: "));
 		f.setSexo(Console.readString("Sexo: "));
-		f.setIdade(Console.readInt("Idade: "));
+		System.out.println("Idade: ");
+		String dataDeNasc = Console.readString();
+		Date date = new Date(dataDeNasc);
+		f.setDataDeNasc(date);
 		f.setCpf(Console.readString("CPF: "));
 		
 		FuncionarioController.cadastrar(f);
 		
 		if(FuncionarioController.cadastrar(f) == 1) {
-			System.out.println("\nFUNCIONÁRIO CADASTRADO!!!\n");
+			System.out.println("\nFUNCIONï¿½RIO CADASTRADO!!!\n");
 		} else if(FuncionarioController.cadastrar(f) == 2) {
-			System.out.println("\nESSE FUNCIONÁRIO JÁ EXISTE!!!\n");
+			System.out.println("\nESSE FUNCIONï¿½RIO Jï¿½ EXISTE!!!\n");
 		} else if(FuncionarioController.cadastrar(f) == 3) {
-			System.out.println("\nCPF inválido!");
+			System.out.println("\nCPF invï¿½lido!");
 		}
 
 	}
